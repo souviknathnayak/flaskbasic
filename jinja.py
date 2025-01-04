@@ -35,10 +35,26 @@ def submit():
         return f'Hello{name} welcome to my website. You are getting this response via post method'
     return render_template('form.html')
 
-@app.route("/success/<score>")
+@app.route("/success/<int:score>")
 def success(score):
-    return "The marks you got is "+score
-
-
+    if score>=50:
+        res="passed"
+    else:
+        res="failed"
+    exp={'score':score,'res':res}
+    return render_template('result.html',results=res)
+    
+@app.route("/successres/<int:score>")
+def successres(score):
+    res=""
+    if score>=50:
+        res=" passed "
+    else:
+        res=" failed "
+    exp={' score ':score,' res ':res}
+    return render_template('result1.html',results=exp)
+@app.route("/successif/<int:score>")
+def successif(score):
+    return render_template('result2.html',results=score)
 if __name__=="__main__":
     app.run(debug=True)
