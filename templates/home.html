@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask App</title>
-    <h1>Welcome to my flask app</h1>
 </head>
 <body>
+    <h1>Welcome to my flask app</h1>
     <button onclick=redirectToAbout()>About</button>
-    <button onclick=redirectToHome()>Home</button>
+    <button onclick=redirectToIndex()>Index</button>
+    <p> This is simple web application built with Flask</p>
+
+
     <script>
         function redirectToAbout() {
             window.location.href = "/about";
         }
-        function redirectToHome() {
-            window.location.href = "/";
+        function redirectToIndex() {
+            window.location.href = "/index";
         }
     
     </script>
-    <p> This is simple web application built with Flask</p>
-
-
 
     
 </body>
